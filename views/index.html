@@ -9,13 +9,19 @@
     <div class="col-md-3">
       <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c169.56.427.427/s50x50/10155703_10205997463120891_2078437673795409037_n.jpg?oh=a35e1954ffb4202a0210289a3ab0c7b0&oe=558D1378&__gda__=1432001117_036fc5af7ee35efa44312f32bb4b7a06"><br>
       <b>Your Name</b><br>
-      100 followers
+      10000000 followers
     </div>
     <div class="col-md-9">
     
       <!-- display tweets here -->
+
+      <h1> All tweets </h1>
       {% for tweet in tweets %}
-        <li>{{tweet.text}}</li>
+      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p56x56/10671451_10204810743929596_4735238130703468857_n.jpg?oh=fe2b83fa5134328b506c38633b30f11b&oe=5589DB7A&__gda__=1431813905_a1d6e2a3e1847c32a803793c7a44132e"><br>
+      <b>{{tweet.name}}</b><br>
+        <p>{{tweet.text}}</p>
+      
+
       {% endfor %}
       
     </div>
