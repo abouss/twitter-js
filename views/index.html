@@ -1,7 +1,24 @@
-<h1>{{ title }}</h1>
-<p>This is a bare-bones template.</p>
-<ul>
-{% for person in people %}
-  <li>{{ person.name }}</li>
-{% endfor %}
-</ul>
+{% extends "layout.html" %}
+ 
+{% block content %}
+  
+  <div class="page-header">
+    <h1>Welcome to Twitter.js, Anfal!</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/c169.56.427.427/s50x50/10155703_10205997463120891_2078437673795409037_n.jpg?oh=a35e1954ffb4202a0210289a3ab0c7b0&oe=558D1378&__gda__=1432001117_036fc5af7ee35efa44312f32bb4b7a06"><br>
+      <b>Your Name</b><br>
+      100 followers
+    </div>
+    <div class="col-md-9">
+    
+      <!-- display tweets here -->
+      {% for tweet in tweets %}
+        <li>{{tweet.text}}</li>
+      {% endfor %}
+      
+    </div>
+  </div>
+    
+{% endblock %}
