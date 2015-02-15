@@ -15,12 +15,33 @@
     
       <!-- display tweets here -->
 
-      <h1> All tweets </h1>
-      {% for tweet in tweets %}
-      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p56x56/10671451_10204810743929596_4735238130703468857_n.jpg?oh=fe2b83fa5134328b506c38633b30f11b&oe=5589DB7A&__gda__=1431813905_a1d6e2a3e1847c32a803793c7a44132e"><br>
-      <b>{{tweet.name}}</b><br>
-        <p>{{tweet.text}}</p>
+      <h4> All Tweets </h4>
       
+      {% if showForm %}
+      <form action="/submit" method="POST">
+      <label for="name_field">Name:</label>
+      <input name="name" type="text" id="name_field" />
+
+      <label for="text_field">Text:</label>
+      <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+      <input type="submit" value="Submit" />
+      </form>
+      {% endif %}
+
+
+
+      {% for tweet in tweets %}
+      
+      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p56x56/10671451_10204810743929596_4735238130703468857_n.jpg?oh=fe2b83fa5134328b506c38633b30f11b&oe=5589DB7A&__gda__=1431813905_a1d6e2a3e1847c32a803793c7a44132e"><br>
+      
+     
+      <li><b><a href="/users/{{tweet.name}}">{{tweet.name}}</a></b></li>
+
+      <li>{{ tweet.text }}</li>
+
+      <a href ="#">Re-Tweet</a>
+      <div class="clear"></div>
 
       {% endfor %}
       

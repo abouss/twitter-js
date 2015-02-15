@@ -2,6 +2,7 @@ var express = require('express');
 var swig = require('swig');
 var morgan = require('morgan');
 var routes = require('./routes/');
+var bodyParser = require('body-parser');
 
 
 var app = express();
@@ -21,6 +22,10 @@ swig.setDefaults({cache: false});
 app.use(morgan('dev'));
 
 app.use('/', routes);
+
+app.use(bodyParser.urlencoded({ extended: false}));
+
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 

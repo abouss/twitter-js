@@ -3,7 +3,9 @@ var _ = require('underscore');
 var data = [];
 
 var add = function(name, text) {
-	data.push({name: name, text: text});
+  //var id = Math.floor((Math.random() * 100) + 1);
+  //console.log({name: name, text: text, id: id});
+	data.push({name: name, text: text, id: Math.floor((Math.random() * 100) + 1)});
 };
 
 var list = function() {
@@ -11,7 +13,7 @@ var list = function() {
 
 };
 
-var find = function (properties) {
+var find = function (properties) { 
 	return _.where(data, properties);
 };
 
