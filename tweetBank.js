@@ -5,7 +5,7 @@ var data = [];
 var add = function(name, text) {
   //var id = Math.floor((Math.random() * 100) + 1);
   //console.log({name: name, text: text, id: id});
-	data.push({name: name, text: text, id: Math.floor((Math.random() * 100) + 1)});
+	data.unshift({name: name, text: text, id: Math.floor((Math.random() * 100) + 1)});
 };
 
 var list = function() {

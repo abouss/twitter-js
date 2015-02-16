@@ -79,4 +79,42 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Load the socket.io library above, then connect to the server.
+    // Because the socket.io server is being run on the same server as your 
+    // Express instance, you can connect() without any arguments.
+    var socket = io.connect();
+    // When 'new_tweet' events are fired, do something with the packaged tweet
+    
+    socket.on('new_tweet', function (tweet) {
+      //alert('Refreshing... check the console...' + tweet.text);
+      // some logic to add the new tweet to the DOM…
+      //console.log(tweet);
+      //alert('seriously');
+      var uImg=document.createElement("img");
+      uImg.setAttribute('src', 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p56x56/10671451_10204810743929596_4735238130703468857_n.jpg?oh=fe2b83fa5134328b506c38633b30f11b&oe=5589DB7A&__gda__=1431813905_a1d6e2a3e1847c32a803793c7a44132e');
+
+      var para = document.createElement("p");
+      var node = document.createTextNode(tweet.text);
+      para.appendChild(node);
+
+      var element = document.getElementById("div1");
+      element.appendChild(uImg);
+      element.appendChild(para);
+
+    }); 
+
+
+
+  
+  </script>
+
+
+
+
+
+
+
 </html>
