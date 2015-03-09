@@ -37,7 +37,7 @@ module.exports = function(io) {
 
 
     router.get('/users/:name/tweets/:id', function(req, res) {
-        var id = req.params.id;
+        var id = parseInt(req.params.id);
         var list = tweetBank.find({
             id: id
         });

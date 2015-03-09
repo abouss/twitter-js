@@ -6,6 +6,7 @@ var add = function(name, text) {
   //var id = Math.floor((Math.random() * 100) + 1);
   //console.log({name: name, text: text, id: id});
 	data.unshift({name: name, text: text, id: Math.floor((Math.random() * 100) + 1)});
+  console.log('data', data);
 };
 
 var list = function() {
