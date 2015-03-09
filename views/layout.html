@@ -80,6 +80,15 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </body>
 
+      <script type="text/javascript">
+      $("#myForm").submit(function(e) {
+        debugger;
+
+        $.post('/submit', {name: $("#name_field").val(), text: $("#text_field").val()});
+        e.preventDefault();
+        return false;
+      })
+      </script>  
   <script src="/socket.io/socket.io.js"></script>
   <script>
     // Load the socket.io library above, then connect to the server.
@@ -93,6 +102,7 @@
       // some logic to add the new tweet to the DOM…
       //console.log(tweet);
       //alert('seriously');
+      
       var uImg=document.createElement("img");
       uImg.setAttribute('src', 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p56x56/10671451_10204810743929596_4735238130703468857_n.jpg?oh=fe2b83fa5134328b506c38633b30f11b&oe=5589DB7A&__gda__=1431813905_a1d6e2a3e1847c32a803793c7a44132e');
 
@@ -103,6 +113,7 @@
       var element = document.getElementById("div1");
       element.appendChild(uImg);
       element.appendChild(para);
+
 
     }); 
 

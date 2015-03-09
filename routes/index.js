@@ -54,17 +54,17 @@ module.exports = function(io) {
 
         var name = req.body.name;
         var text = req.body.text;
-        //tweetBank.add(name, text);
+        tweetBank.add(name, text);
         
-        // var tweet = tweetBank.find({
-        //     name: name,
-        //     text: text
-        // });
+        var tweet = tweetBank.find({
+             name: name,
+             text: text
+         });
 
 
         io.sockets.emit('new_tweet', { name: name, text: text });
 
-        res.redirect('/');
+        res.send(200);
     });
 
 

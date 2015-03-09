@@ -18,7 +18,8 @@
       <h4> All Tweets </h4>
       
       {% if showForm %}
-      <form action="/submit" method="POST">
+
+      <form action="/submit" id="myForm" method="POST">
       <label for="name_field">Name:</label>
       <input name="name" type="text" id="name_field" value="Anfal Boussayoud" />
 
@@ -27,6 +28,8 @@
 
       <input type="submit" value="Submit" />
       </form>
+
+    
       {% endif %}
     
 
